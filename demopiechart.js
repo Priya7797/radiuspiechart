@@ -26,7 +26,7 @@ function loadScript(src) {
 		});
 	}	
 
-    customElements.define('com-sap-sample-piechart1', class WidgetTemplate extends HTMLElement {
+    customElements.define('com-bva4kor-sac-radialbarchart', class WidgetTemplate extends HTMLElement {
 
 
 		constructor() {
