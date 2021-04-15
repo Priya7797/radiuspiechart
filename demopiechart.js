@@ -26,7 +26,7 @@ function loadScript(src) {
 		});
 	}	
 
-    customElements.define('com-bva4kor-sac-piechart', class WidgetTemplate extends HTMLElement {
+    customElements.define('com-sap-sample-piechart1', class WidgetTemplate extends HTMLElement {
 
 
 		constructor() {
@@ -64,18 +64,13 @@ function loadScript(src) {
         
         }
 
-		onCustomWidgetResize(width, height){
-			if (this._firstConnection === 1) {
-				this.loadthis();
-			}
-        }
-         //When the custom widget is updated, the Custom Widget SDK framework executes this function first
-		onCustomWidgetBeforeUpdate(oChangedProperties) {
-
-		}
-
         //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
-    onCustomWidgetAfterUpdate(changedProperties) {
+		
+	onCustomWidgetBeforeUpdate(changedProperties) {
+			this._props = { ...this._props, ...changedProperties };
+		}
+		
+		onCustomWidgetAfterUpdate(changedProperties) {
 			if ("color" in changedProperties) {
 				this._series1Color = changedProperties["color"];
 			}
@@ -89,10 +84,12 @@ function loadScript(src) {
 				this.loadthis();
 			}
 		}
-            }
-        }
 		
-		
+		onCustomWidgetResize(width, height){
+			if (this._firstConnection === 1) {
+				this.loadthis();
+			}
+        }	
         
         //When the custom widget is removed from the canvas or the analytic application is closed
         onCustomWidgetDestroy(){
@@ -106,18 +103,15 @@ function loadScript(src) {
         
         }
         */
-        onCustomWidgetResize(width, height){
-			if (this._firstConnection === 1) {
-				this.loadthis();
-			}
 
         loadthis(){
 			
 			let myChart = this.shadowRoot.getElementById('chartdiv');
 			myChart.style.height = this.shadowRoot.host.clientHeight - 20 + "px";
 			myChart.style.width = this.shadowRoot.host.clientWidth - 20 + "px";
-						
-            if(this._chartTitle && this._chartTitle.trim() !== "") {
+			
+		
+			if(this._chartTitle && this._chartTitle.trim() !== "") {
 				var chartTitle = this.shadowRoot.getElementById('chartTitle');
 				chartTitle.innerText = this._chartTitle.trim();
 				if(this._chartTitleFontSize && this._chartTitleFontSize > 0) {
@@ -134,6 +128,7 @@ am4core.useTheme(am4themes_animated);
 // Create chart
 var chart = am4core.create(myChart, am4charts.PieChart);
 chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
 chart.data = [
   {
     country: "Lithuania",
