@@ -163,7 +163,7 @@ else {
 						newDataObject.country = dimMemberDesc;
 						newDataObject.measuredescriptions = [];
 						newDataObject.measuredescriptions.push(msrObj.measure_description);
-						newDataObject.value1 = msrObj.formattedValue;
+						newDataObject.value = msrObj.formattedValue;
 						newChartData.push(newDataObject);
 					} else {
 						var existingObj = newChartData.find(x => x.category_id === dimMemberID);
@@ -173,7 +173,8 @@ else {
 					}
 					
 				}
-// 				chart.data = newChartData;
+				chart.data = newChartData;
+				console.log("That's my new data for chart");
 				console.log(newChartData);
 
 }
