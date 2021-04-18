@@ -173,7 +173,7 @@ else {
 					}
 					
 				}
-				chart.data = newChartData;
+// 				chart.data = newChartData;
 				console.log(newChartData);
 
 }
