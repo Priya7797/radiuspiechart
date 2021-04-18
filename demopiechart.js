@@ -26,7 +26,7 @@ function loadScript(src) {
 		});
 	}	
 
-    customElements.define('com-bva4kor-sac-radialbarchart', class WidgetTemplate extends HTMLElement {
+    customElements.define('com-sap-sample-piechart1', class WidgetTemplate extends HTMLElement {
 
 
 		constructor() {
@@ -64,14 +64,19 @@ function loadScript(src) {
         
         }
 
-        //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
-		
-	onCustomWidgetBeforeUpdate(changedProperties) {
-			this._props = { ...this._props, ...changedProperties };
+		onCustomWidgetResize(width, height){
+			if (this._firstConnection === 1) {
+				this.loadthis();
+			}
+        }
+         //When the custom widget is updated, the Custom Widget SDK framework executes this function first
+		onCustomWidgetBeforeUpdate(oChangedProperties) {
+		this._props = { ...this._props, ...changedProperties };
 		}
-		
-		onCustomWidgetAfterUpdate(changedProperties) {
-			if ("color" in changedProperties) {
+
+        //When the custom widget is updated, the Custom Widget SDK framework executes this function after the update
+		onCustomWidgetAfterUpdate(oChangedProperties) {
+            if ("color" in changedProperties) {
 				this._series1Color = changedProperties["color"];
 			}
 			if ("title" in changedProperties) {
@@ -83,13 +88,9 @@ function loadScript(src) {
 			if (this._firstConnection === 1) {
 				this.loadthis();
 			}
-		}
+        }
 		
-		onCustomWidgetResize(width, height){
-			if (this._firstConnection === 1) {
-				this.loadthis();
-			}
-        }	
+		
         
         //When the custom widget is removed from the canvas or the analytic application is closed
         onCustomWidgetDestroy(){
@@ -109,9 +110,8 @@ function loadScript(src) {
 			let myChart = this.shadowRoot.getElementById('chartdiv');
 			myChart.style.height = this.shadowRoot.host.clientHeight - 20 + "px";
 			myChart.style.width = this.shadowRoot.host.clientWidth - 20 + "px";
-			
 		
-			if(this._chartTitle && this._chartTitle.trim() !== "") {
+		if(this._chartTitle && this._chartTitle.trim() !== "") {
 				var chartTitle = this.shadowRoot.getElementById('chartTitle');
 				chartTitle.innerText = this._chartTitle.trim();
 				if(this._chartTitleFontSize && this._chartTitleFontSize > 0) {
@@ -120,6 +120,7 @@ function loadScript(src) {
 				myChart.style.height = myChart.clientHeight - chartTitle.clientHeight - 10 + "px";
 				myChart.style.top = chartTitle.clientHeight - 10 + "px"; 
 			}
+		
 						
 // Themes begin
 am4core.useTheme(am4themes_animated);
@@ -128,7 +129,7 @@ am4core.useTheme(am4themes_animated);
 // Create chart
 var chart = am4core.create(myChart, am4charts.PieChart);
 chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
-
+if(this.datasourceString.trim() === "{}") {
 chart.data = [
   {
     country: "Lithuania",
@@ -155,6 +156,33 @@ chart.data = [
     value: 128
   }
 ];
+}
+		
+else {
+				var newDataSourceObj = JSON.parse(this.datasourceString);
+				var newChartData = [];
+				for(var i = 0; i < newDataSourceObj.length; i++) {
+					var dimMemberID = newDataSourceObj[i].dimensions[0].member_id;
+					var dimMemberDesc = newDataSourceObj[i].dimensions[0].member_description;
+					var msrObj = newDataSourceObj[i].measure;
+					if(!newChartData.find(x => x.category_id === dimMemberID)) {
+						var newDataObject = {};
+						newDataObject.category_id = dimMemberID;
+						newDataObject.category = dimMemberDesc;
+						newDataObject.measuredescriptions = [];
+						newDataObject.measuredescriptions.push(msrObj.measure_description);
+						newDataObject.value1 = msrObj.formattedValue;
+						newChartData.push(newDataObject);
+					} else {
+						var existingObj = newChartData.find(x => x.category_id === dimMemberID);
+						existingObj.measuredescriptions.push(msrObj.measure_description);
+						var newProp = "value"+existingObj.measuredescriptions.length;
+						existingObj[newProp] = msrObj.formattedValue;
+					}
+				}
+				chart.data = newChartData;
+			}
+		
 
 var series = chart.series.push(new am4charts.PieSeries());
 series.dataFields.value = "value";
