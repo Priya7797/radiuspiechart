@@ -160,7 +160,7 @@ else {
 					if(!newChartData.find(x => x.category_id === dimMemberID)) {
 						var newDataObject = {};
 						newDataObject.category_id = dimMemberID;
-						newDataObject.category = dimMemberDesc;
+						newDataObject.country = dimMemberDesc;
 						newDataObject.measuredescriptions = [];
 						newDataObject.measuredescriptions.push(msrObj.measure_description);
 						newDataObject.value1 = msrObj.formattedValue;
