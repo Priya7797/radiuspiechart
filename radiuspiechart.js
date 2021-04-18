@@ -67,6 +67,16 @@ function loadScript(src) {
 				this.loadthis();
 			}
         }
+		
+		onCustomWidgetBeforeUpdate(changedProperties) {
+			this._props = { ...this._props, ...changedProperties };
+		}
+		
+		onCustomWidgetAfterUpdate(changedProperties) {
+			if (this._firstConnection === 1) {
+				this.loadthis();
+			}
+		}
          //When the custom widget is updated, the Custom Widget SDK framework executes this function first
 		onCustomWidgetBeforeUpdate(oChangedProperties) {
 
@@ -108,6 +118,8 @@ am4core.useTheme(am4themes_animated);
 var chart = am4core.create(myChart, am4charts.PieChart);
 chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
+if(this.datasourceString.trim() === "{}") { 
+
 chart.data = [
   {
     country: "Lithuania",
@@ -134,6 +146,37 @@ chart.data = [
     value: 128
   }
 ];
+
+
+}
+
+else {
+				var newDataSourceObj = JSON.parse(this.datasourceString);
+				var newChartData = [];
+				for(var i = 0; i < newDataSourceObj.length; i++) {
+					var dimMemberID = newDataSourceObj[i].dimensions[0].member_id;
+					var dimMemberDesc = newDataSourceObj[i].dimensions[0].member_description;
+					var msrObj = newDataSourceObj[i].measure;
+					if(!newChartData.find(x => x.category_id === dimMemberID)) {
+						var newDataObject = {};
+						newDataObject.category_id = dimMemberID;
+						newDataObject.category = dimMemberDesc;
+						newDataObject.measuredescriptions = [];
+						newDataObject.measuredescriptions.push(msrObj.measure_description);
+						newDataObject.value1 = msrObj.formattedValue;
+						newChartData.push(newDataObject);
+					} else {
+						var existingObj = newChartData.find(x => x.category_id === dimMemberID);
+						existingObj.measuredescriptions.push(msrObj.measure_description);
+						var newProp = "value"+existingObj.measuredescriptions.length;
+						existingObj[newProp] = msrObj.formattedValue;
+					}
+					
+				}
+				chart.data = newChartData;
+				console.log(newChartData);
+
+}
 
 var series = chart.series.push(new am4charts.PieSeries());
 series.dataFields.value = "value";
