@@ -195,7 +195,7 @@ series.colors.step = 3;
 
 series.hiddenState.properties.endAngle = -90;
 
-chart.legend = new am4charts.Legend();
+//chart.legend = new am4charts.Legend();
 // end am4core.ready()
         }
     
