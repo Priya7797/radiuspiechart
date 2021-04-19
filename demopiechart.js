@@ -9,6 +9,7 @@
 	
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
+<div id="chartTitle" style=""></div><br/>
 <div id="chartdiv"></div>
     `;
 	
