@@ -181,8 +181,7 @@ else {
 					
 				}
 				chart.data = newChartData;
-				console.log("That's my new data for chart");
-				console.log(newChartData);
+				
 
 }
 
