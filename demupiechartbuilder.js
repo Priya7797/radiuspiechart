@@ -128,5 +128,5 @@
 		
 	}
 
-	customElements.define("com-sap-sample-piechart1-builder", RadialBarChartBuilderPanel);
+	customElements.define("com-bva4kor-sac-radialbarchart3-builder", RadialBarChartBuilderPanel);
 })();
