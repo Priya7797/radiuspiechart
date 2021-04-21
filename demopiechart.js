@@ -198,8 +198,9 @@ series.slices.template.cornerRadius = 6;
 series.colors.step = 3;
 
 series.hiddenState.properties.endAngle = -90;
-
-//chart.legend = new am4charts.Legend();
+if(this._legend==true){
+chart.legend = new am4charts.Legend();
+}
 // end am4core.ready()
         }
     
