@@ -127,5 +127,5 @@
 		
 	}
 
-	customElements.define("com-sap-sample-piechart3-builder", RadiusPieChartBuilderPanel);
+	customElements.define("com-sap-sample-piechart-builder", RadiusPieChartBuilderPanel);
 })();
