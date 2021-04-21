@@ -116,11 +116,11 @@
 			return this._shadowRoot.getElementById("chart_title_fontsize").value;
 		}
 		set legend(newLegend) {
-			this._shadowRoot.getElementById("myonoffswitch").value = newLegend;
+			this._shadowRoot.getElementById("myonoffswitch").checked = newLegend;
 		}
 
 		get legend() {
-			return this._shadowRoot.getElementById("myonoffswitch").value;
+			return this._shadowRoot.getElementById("myonoffswitch").checked;
 		}
 		
 	}
