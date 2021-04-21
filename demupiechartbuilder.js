@@ -12,7 +12,8 @@
 					<td><input id="chart_title_fontsize" type="number" size="2" maxlength="2"></td>
 				</tr
 
-
+<tr>
+<td>Legend</td>
 <div class="onoffswitch">
     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
     <label class="onoffswitch-label" for="myonoffswitch">
@@ -20,7 +21,12 @@
         <span class="onoffswitch-switch"></span>
     </label>
 </div>
-<style>
+</tr>
+
+			</table>
+			<input type="submit" style="display:none;">
+		</form>
+		<style>
 .onoffswitch {
     position: relative; width: 90px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -68,13 +74,6 @@
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
     right: 0px; 
 }
-</style>
-
-
-			</table>
-			<input type="submit" style="display:none;">
-		</form>
-		<style>
 		:host {
 			display: block;
 			padding: 1em 1em 1em 1em;
@@ -97,7 +96,7 @@
 						properties: {
 							title: this.title,
 							titlefontsize: this.titlefontsize, 
-							legends: this.legends
+							legend: this.legend
 						}
 					}
 			}));
@@ -118,11 +117,11 @@
 		get titlefontsize() {
 			return this._shadowRoot.getElementById("chart_title_fontsize").value;
 		}
-		set legends(newLegends) {
-			this._shadowRoot.getElementById("myonoffswitch").value = newLegends;
+		set legend(newLegend) {
+			this._shadowRoot.getElementById("myonoffswitch").value = newLegend;
 		}
 
-		get legends() {
+		get legend() {
 			return this._shadowRoot.getElementById("myonoffswitch").value;
 		}
 		
