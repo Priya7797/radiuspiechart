@@ -79,11 +79,11 @@ function loadScript(src) {
 				if ("titlefontsize" in changedProperties) {
 					this._chartTitleFontSize = changedProperties["titlefontsize"];
 				}
-				if (this._firstConnection === 1) {
-					this.loadthis();
-				}
 				if ("legend" in changedProperties) {
 					this._legend = changedProperties["legend"];
+				}
+				if (this._firstConnection === 1) {
+					this.loadthis();
 				}
 			}
 
