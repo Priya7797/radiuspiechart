@@ -81,7 +81,7 @@
 		</style>
 	`;
 
-	class RadialBarChartBuilderPanel extends HTMLElement {
+	class RadiusPieChartBuilderPanel extends HTMLElement {
 		constructor() {
 			super();
 			this._shadowRoot = this.attachShadow({mode: "open"});
@@ -127,5 +127,5 @@
 		
 	}
 
-	customElements.define("com-bva4kor-sac-radialbarchart3-builder", RadialBarChartBuilderPanel);
+	customElements.define("com-sap-sample-piechart3-builder", RadiusPieChartBuilderPanel);
 })();
