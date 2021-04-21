@@ -2,6 +2,7 @@
 	let _series1Color;
 	let _chartTitle;
 	let _chartTitleFontSize;
+	let _legend;
 	const amchartscorejs = "https://cdn.amcharts.com/lib/4/core.js";
 	const amchartschartsjs = "https://cdn.amcharts.com/lib/4/charts.js";
 	const amchartsanimatedjs = "https://cdn.amcharts.com/lib/4/themes/animated.js"
@@ -27,7 +28,7 @@ function loadScript(src) {
 		});
 	}	
 
-    customElements.define('com-sap-sample-piechart1', class WidgetTemplate extends HTMLElement {
+    customElements.define('com-sap-sample-piechart', class WidgetTemplate extends HTMLElement {
 
 
 		constructor() {
@@ -80,6 +81,9 @@ function loadScript(src) {
 				}
 				if (this._firstConnection === 1) {
 					this.loadthis();
+				}
+				if ("legend" in changedProperties) {
+					this._legend = changedProperties["legend"];
 				}
 			}
 
