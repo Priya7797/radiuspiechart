@@ -11,19 +11,17 @@
 					<td>Chart Title Font Size</td>
 					<td><input id="chart_title_fontsize" type="number" size="2" maxlength="2"></td>
 				</tr
+</table>
 
-<tr>
-<td>Legend</td>
 <div class="onoffswitch">
+<span> Legend </span>
     <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
     <label class="onoffswitch-label" for="myonoffswitch">
         <span class="onoffswitch-inner"></span>
         <span class="onoffswitch-switch"></span>
     </label>
 </div>
-</tr>
 
-			</table>
 			<input type="submit" style="display:none;">
 		</form>
 		<style>
