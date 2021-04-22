@@ -39,7 +39,7 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
-			this._shadowRoot.getElementById("showlegend").addEventListener("click", this._submit2.bind(this));
+			this._shadowRoot.getElementById("showlegend").addEventListener("click", this._click.bind(this));
 		}
 
 		_submit(e) {
@@ -55,25 +55,20 @@
 					}
 			}));
 			
-		_submit2(e) {
-			e.preventDefault();
+		}
+		
+			
+		_click(e) {
+// 			e.preventDefault();
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
-							
 							statusCheckBox: this.statusCheckBox
 							
 						}
 					}
 			}));
-			
-			
-			
-		
-			
-			
-			
-		}
+		}	
 		
 		set statusCheckBox(status) {
 			console.log("Inside the set statusCheckBox");
