@@ -13,7 +13,7 @@
 				</tr
 				<br/>
 				<tr>
-					<input type="checkbox" id="showlegend" name="showlgnd" >
+					<input type="checkbox" id="showlegend" name="showlgnd" checked>
 					<label for="showlegend" id="showlgndlabel"> Show Legend</label><br>
 				</tr>
 			</table>
@@ -59,11 +59,13 @@
 		}
 		
 		set statusCheckBox(status) {
-			this._shadowRoot.getElementById("showlegend").value = status;
+			console.log("Inside the set statusCheckBox");
+			this._shadowRoot.getElementById("showlegend").checked = !status;
 		}
 
 		get statusCheckBox() {
-			return this._shadowRoot.getElementById("showlegend").value;
+			console.log("Inside the set statusCheckBox");
+			return this._shadowRoot.getElementById("showlegend").checked;
 		}
 		
 
