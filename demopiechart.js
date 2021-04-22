@@ -202,11 +202,11 @@ series.slices.template.cornerRadius = 6;
 series.colors.step = 3;
 
 series.hiddenState.properties.endAngle = -90;
-if(this._legendYes==true){
+if(this._legendYes ==true){
 chart.legend = new am4charts.Legend();
 }
-if(this._legendNo==true){
-this.loadthis();
+/*if(this._legendNo ==true){
+this.loadthis();*/
 }
 // end am4core.ready()
         }
