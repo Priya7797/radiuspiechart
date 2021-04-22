@@ -203,6 +203,7 @@ if(this._statusCheckBox == true){
 chart.legend = new am4charts.Legend();
 chart.legend.maxHeight = 50;
 chart.legend.scrollable = true;
+chart.legend.fontSize = 5;
 }
 
 // end am4core.ready()
