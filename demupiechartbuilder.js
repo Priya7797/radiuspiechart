@@ -44,7 +44,7 @@
 						properties: {
 							title: this.title,
 							titlefontsize: this.titlefontsize,
-							legendlabel: this.legendlabel
+							statusCheckBox: this.statusCheckBox
 							
 						}
 					}
@@ -57,6 +57,15 @@
 			
 			
 		}
+		
+		set statusCheckBox(status) {
+			this._shadowRoot.getElementById("showlegend").value = status;
+		}
+
+		get statusCheckBox() {
+			return this._shadowRoot.getElementById("showlegend").value;
+		}
+		
 
 		set title(newTitle) {
 			this._shadowRoot.getElementById("chart_title").value = newTitle;
