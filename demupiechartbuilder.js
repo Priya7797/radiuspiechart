@@ -13,8 +13,8 @@
 				</tr
 				<br/>
 				<tr>
-					<input type="checkbox" id="showlegend" name="showlgnd" value="Yes">
-					<label for="vehicle1"> Show Legend</label><br>
+					<input type="checkbox" id="showlegend" name="showlgnd" value="True">
+					<label for="showlegend"> Show Legend</label><br>
 				</tr>
 			</table>
 
@@ -27,7 +27,14 @@
 		}
 		</style>
 	`;
-
+			    $("#showlegend").click(function () { 
+				if ($(this).prop("checked")) { 
+				    $("showlegend").val("True"); 
+				} 
+				else { 
+				    $("showlegend").val("False"); 
+				} 
+			    }); 
 	class RadiusPieChartBuilderPanel extends HTMLElement {
 		constructor() {
 			super();
@@ -67,11 +74,11 @@
 			return this._shadowRoot.getElementById("chart_title_fontsize").value;
 		}
 		set legend(newLegend) {
-			this._shadowRoot.getElementById("showlegend").checked = newLegend;
+			this._shadowRoot.getElementById("showlegend").value = newLegend;
 		}
 
 		get legend() {
-			return this._shadowRoot.getElementById("showlegend").checked;
+			return this._shadowRoot.getElementById("showlegend").value;
 		}
 		
 	}
