@@ -203,7 +203,10 @@ if(this._statusCheckBox == true){
 chart.legend = new am4charts.Legend();
 chart.legend.maxHeight = 50;
 chart.legend.scrollable = true;
-chart.legend.fontSize = 5;
+chart.legend.fontSize = 10;
+var markerTemplate = chart.legend.markers.template;
+markerTemplate.width = 10;
+markerTemplate.height = 10;
 }
 
 // end am4core.ready()
