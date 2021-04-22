@@ -1,8 +1,6 @@
 (function()  {
 	let template = document.createElement("template");
 	template.innerHTML = `
-		<input type="checkbox" id="showlegend" name="showlgnd" checked>
-					<label for="showlegend" id="showlgndlabel"> Show Legend</label><br>
 		<form id="form">
 			<table>
 				<tr>
@@ -18,6 +16,11 @@
 					<input type="checkbox" id="showlegend" name="showlgnd" checked>
 					<label for="showlegend" id="showlgndlabel"> Show Legend</label><br>
 				</tr>
+				<br/>
+				<tr>
+					<button type="submit" value="Submit">Submit Changes</button>
+				</tr>
+
 			</table>
 
 			<input type="submit" style="display:none;">
@@ -62,7 +65,7 @@
 		
 		set statusCheckBox(status) {
 			console.log("Inside the set statusCheckBox");
-			this._shadowRoot.getElementById("showlegend").checked = !status;
+			this._shadowRoot.getElementById("showlegend").checked = status;
 		}
 
 		get statusCheckBox() {
