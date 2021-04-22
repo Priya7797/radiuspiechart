@@ -19,7 +19,7 @@
 					    Yes
 					</label>
 					<label for="chkNo">
-					    <input type="radio" id="chkNo" name="chklegend" />
+					    <input type="radio" id="chkNo" name="chklegend" checked/>
 					    No
 					</label>
 				</tr>
