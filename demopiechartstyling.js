@@ -43,5 +43,5 @@
 		}
 	}
 
-customElements.define("com-bva4kor-sac-radialbarchart-styling", RadialBarChartStylingPanel);
+customElements.define("com-sap-sample-piechart-styling", RadialBarChartStylingPanel);
 })();
