@@ -73,9 +73,7 @@
 		get legendlabel() {
 			return this._shadowRoot.getElementById("showlgndlabel").value;
 		}
-		
-	}
-	 $("#showlegend").click(function () { 
+		$("#showlegend").click(function () { 
 				if ($(this).prop("checked")) { 
 				    $("showlgndlabel").val("Legend is On"); 
 				} 
@@ -83,6 +81,7 @@
 				    $("showlgndlabel").val("Legend is off"); 
 				} 
 			    }); 
-
+	}
+	 
 	customElements.define("com-sap-sample-piechart-builder", RadiusPieChartBuilderPanel);
 })();
