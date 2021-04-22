@@ -39,7 +39,7 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
-			this._shadowRoot.getElementById("showlegend").addEventListener("click", this._submit.bind(this));
+			this._shadowRoot.getElementById("showlegend").addEventListener("click", this._submit2.bind(this));
 		}
 
 		_submit(e) {
@@ -49,6 +49,18 @@
 						properties: {
 							title: this.title,
 							titlefontsize: this.titlefontsize,
+							statusCheckBox: this.statusCheckBox
+							
+						}
+					}
+			}));
+			
+		_submit2(e) {
+// 			e.preventDefault();
+			this.dispatchEvent(new CustomEvent("propertiesChanged", {
+					detail: {
+						properties: {
+							
 							statusCheckBox: this.statusCheckBox
 							
 						}
