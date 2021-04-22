@@ -15,11 +15,11 @@
 				<tr>
 					<span>Do you want legend?</span>
 					<label for="chkYes">
-						<input type="radio" name="chklegend" checked />
+						<input type="radio" id="chkYes" name="chklegend" checked />
 						Yes
 					</label>
 					<label for="chkNo">
-						<input type="radio" name="chklegend" />
+						<input type="radio" id="chkNo" name="chklegend" />
 						No
 					</label>
 				</tr>
