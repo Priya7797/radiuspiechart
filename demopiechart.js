@@ -198,7 +198,7 @@ series.slices.template.cornerRadius = 6;
 series.colors.step = 3;
 
 series.hiddenState.properties.endAngle = -90;
-if(this._legend ==true){
+if(this._legend =="True"){
 chart.legend = new am4charts.Legend();
 }
 
