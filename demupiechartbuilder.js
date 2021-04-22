@@ -1,6 +1,8 @@
 (function()  {
 	let template = document.createElement("template");
 	template.innerHTML = `
+		<input type="checkbox" id="showlegend" name="showlgnd" checked>
+					<label for="showlegend" id="showlgndlabel"> Show Legend</label><br>
 		<form id="form">
 			<table>
 				<tr>
