@@ -2,8 +2,7 @@
 	let _series1Color;
 	let _chartTitle;
 	let _chartTitleFontSize;
-	let _legendYes;
-	let _legendNo;
+	let _legend;
 	const amchartscorejs = "https://cdn.amcharts.com/lib/4/core.js";
 	const amchartschartsjs = "https://cdn.amcharts.com/lib/4/charts.js";
 	const amchartsanimatedjs = "https://cdn.amcharts.com/lib/4/themes/animated.js"
@@ -80,11 +79,8 @@ function loadScript(src) {
 				if ("titlefontsize" in changedProperties) {
 					this._chartTitleFontSize = changedProperties["titlefontsize"];
 				}
-				if ("legendYes" in changedProperties) {
-					this._legendYes = changedProperties["legendYes"];
-				}
-				if ("legendNo" in changedProperties) {
-					this._legendNo = changedProperties["legendNo"];
+				if ("legend" in changedProperties) {
+					this._legend = changedProperties["legend"];
 				}
 				if (this._firstConnection === 1) {
 					this.loadthis();
@@ -202,12 +198,10 @@ series.slices.template.cornerRadius = 6;
 series.colors.step = 3;
 
 series.hiddenState.properties.endAngle = -90;
-if(this._legendYes ==true){
+if(this._legend ==true){
 chart.legend = new am4charts.Legend();
 }
-/*if(this._legendNo ==true){
-this.loadthis();*/
-}
+
 // end am4core.ready()
         }
     
