@@ -13,13 +13,11 @@
 				</tr
 				<br/>
 				<tr>
-					<td> <input type="checkbox" id="showlegend" name="showlgnd" checked> </td>
-					<td><label for="showlegend" id="showlgndlabel"> Show Legend</label><br> </td>
+					<td> <input type="checkbox" id="showlegend" name="showlgnd" checked>
+					     <label for="showlegend" id="showlgndlabel"> Show Legend</label><br> </td>
 				</tr>
 				<br/>
-				<tr>
-					<td> <button type="submit" value="Submit">Submit Changes</button> </td>
-				</tr>
+				
 
 			</table>
 
