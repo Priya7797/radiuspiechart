@@ -44,8 +44,7 @@
 
 		_submit(e) {
 			e.preventDefault();
-			let x = this._shadowRoot.getElementById("showlegend");
-			x.checked = !x.checked;
+			
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
@@ -62,6 +61,8 @@
 			
 		_click(e) {
 			e.preventDefault();
+			let x = this._shadowRoot.getElementById("showlegend");
+			x.checked = !x.checked;
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
