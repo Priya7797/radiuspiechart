@@ -39,13 +39,13 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
-// 			this._shadowRoot.getElementById("showlegend").addEventListener("change", this._click.bind(this));
+			this._shadowRoot.getElementById("showlegend").addEventListener("change", this._click.bind(this));
 		}
 
 		_submit(e) {
 			e.preventDefault();
-			let x = this._shadowRoot.getElementById("showlegend");
-			x.checked = !x.checked;
+// 			let x = this._shadowRoot.getElementById("showlegend");
+// 			x.checked = !x.checked;
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
@@ -62,8 +62,7 @@
 			
 		_click(e) {
 			e.preventDefault();
-			let x = this._shadowRoot.getElementById("showlegend");
-			x.checked = !x.checked;
+			
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
@@ -74,6 +73,8 @@
 						}
 					}
 			}));
+			let x = this._shadowRoot.getElementById("showlegend");
+			x.checked = !x.checked;
 		}	
 		
 		set statusCheckBox(status) {
