@@ -13,7 +13,7 @@
 				</tr
 				<br/>
 				<tr>
-					<input type="checkbox" id="showlegend" name="showlgnd" value="True">
+					<input type="checkbox" id="showlegend" name="showlgnd" >
 					<label for="showlegend" id="showlgndlabel"> Show Legend</label><br>
 				</tr>
 			</table>
@@ -52,15 +52,7 @@
 			
 			
 			
-			$("#showlegend").click(function () { 
-				if ($(this).prop("checked")) { 
-				    $("showlgndlabel").val("Legend is On"); 
-				} 
-				else { 
-				    $("showlgndlabel").val("Legend is off"); 
-				} 
-			    }); 
-			
+		
 			
 			
 			
