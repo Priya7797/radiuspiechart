@@ -73,8 +73,8 @@
 						}
 					}
 			}));
-			let x = this._shadowRoot.getElementById("showlegend");
-			x.checked = !x.checked;
+			
+			this.checked = !this.checked;
 		}	
 		
 		set statusCheckBox(status) {
