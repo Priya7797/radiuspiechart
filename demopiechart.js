@@ -201,8 +201,8 @@ series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);		
 if(this._statusCheckBox == true){
 chart.legend = new am4charts.Legend();
-chart.legend.maxHeight = 50;
-chart.legend.scrollable = true;
+//chart.legend.maxHeight = 50;
+//chart.legend.scrollable = true;
 chart.legend.fontSize = 10;
 var markerTemplate = chart.legend.markers.template;
 markerTemplate.width = 10;
