@@ -73,12 +73,19 @@
 		get titlefontsize() {
 			return this._shadowRoot.getElementById("chart_title_fontsize").value;
 		}
-		set legend(newLegend) {
-			this._shadowRoot.getElementById("chkYes").checked = newLegend;
+		set legendYes(newLegendYes) {
+			this._shadowRoot.getElementById("chkYes").checked = newLegendYes;
 		}
 
-		get legend() {
+		get legendYes() {
 			return this._shadowRoot.getElementById("chkYes").checked;
+		}
+		set legendNo(newLegendNo) {
+			this._shadowRoot.getElementById("chkNo").checked = newLegendNo;
+		}
+
+		get legendNo() {
+			return this._shadowRoot.getElementById("chkNo").checked;
 		}
 		
 	}
