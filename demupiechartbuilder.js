@@ -59,7 +59,7 @@
 		
 			
 		_click(e) {
-// 			e.preventDefault();
+			e.preventDefault();
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
