@@ -56,7 +56,7 @@
 			}));
 			
 		_submit2(e) {
-// 			e.preventDefault();
+			e.preventDefault();
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
