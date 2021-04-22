@@ -66,6 +66,8 @@
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
+							title: this.title,
+							titlefontsize: this.titlefontsize,
 							statusCheckBox: this.statusCheckBox
 							
 						}
