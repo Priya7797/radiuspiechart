@@ -13,15 +13,8 @@
 				</tr
 				<br/>
 				<tr>
-					<span>Do you want legend?</span>
-					<label for="chkYes">
-					    <input type="radio" id="chkYes" name="chklegend" checked/>
-					    Yes
-					</label>
-					<label for="chkNo">
-					    <input type="radio" id="chkNo" name="chklegend"/>
-					    No
-					</label>
+					<input type="checkbox" id="showlegend" name="showlgnd" value="Yes">
+					<label for="vehicle1"> Show Legend</label><br>
 				</tr>
 			</table>
 
@@ -41,8 +34,7 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
-			this._shadowRoot.getElementById("chkYes").addEventListener("click", this._submit.bind(this));
-			this._shadowRoot.getElementById("chkNo").addEventListener("click", this._submit.bind(this));
+			this._shadowRoot.getElementById("showlegend").addEventListener("click", this._submit.bind(this));
 		}
 
 		_submit(e) {
@@ -52,8 +44,8 @@
 						properties: {
 							title: this.title,
 							titlefontsize: this.titlefontsize, 
-							legendYes: this.legendYes,
-							legendNo: this.legendNo
+							legend: this.legend,
+							
 						}
 					}
 			}));
@@ -74,19 +66,12 @@
 		get titlefontsize() {
 			return this._shadowRoot.getElementById("chart_title_fontsize").value;
 		}
-		set legendYes(newLegendYes) {
-			this._shadowRoot.getElementById("chkYes").checked = newLegendYes;
+		set legend(newLegend) {
+			this._shadowRoot.getElementById("showlegend").checked = newLegend;
 		}
 
-		get legendYes() {
-			return this._shadowRoot.getElementById("chkYes").checked;
-		}
-		set legendNo(newLegendNo) {
-			this._shadowRoot.getElementById("chkNo").checked = newLegendNo;
-		}
-
-		get legendNo() {
-			return this._shadowRoot.getElementById("chkNo").checked;
+		get legend() {
+			return this._shadowRoot.getElementById("showlegend").checked;
 		}
 		
 	}
