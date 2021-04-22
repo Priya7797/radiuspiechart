@@ -96,13 +96,6 @@
 		get titlefontsize() {
 			return this._shadowRoot.getElementById("chart_title_fontsize").value;
 		}
-		set legendlabel(newLegendlabel) {
-			this._shadowRoot.getElementById("showlgndlabel").value = newLegendlabel;
-		}
-
-		get legendlabel() {
-			return this._shadowRoot.getElementById("showlgndlabel").value;
-		}
 		
 	}
 	 
