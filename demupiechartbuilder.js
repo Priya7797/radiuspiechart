@@ -13,12 +13,12 @@
 				</tr
 				<br/>
 				<tr>
-					<input type="checkbox" id="showlegend" name="showlgnd" checked>
-					<label for="showlegend" id="showlgndlabel"> Show Legend</label><br>
+					<td> <input type="checkbox" id="showlegend" name="showlgnd" checked> </td>
+					<td><label for="showlegend" id="showlgndlabel"> Show Legend</label><br> </td>
 				</tr>
 				<br/>
 				<tr>
-					<button type="submit" value="Submit">Submit Changes</button>
+					<td> <button type="submit" value="Submit">Submit Changes</button> </td>
 				</tr>
 
 			</table>
@@ -39,7 +39,7 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
-// 			this._shadowRoot.getElementById("showlegend").addEventListener("click", this._submit.bind(this));
+			this._shadowRoot.getElementById("showlegend").addEventListener("click", this._submit.bind(this));
 		}
 
 		_submit(e) {
