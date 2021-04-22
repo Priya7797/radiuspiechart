@@ -27,14 +27,7 @@
 		}
 		</style>
 	`;
-			    $("#showlegend").click(function () { 
-				if ($(this).prop("checked")) { 
-				    $("showlgndlabel").val("Legend is On"); 
-				} 
-				else { 
-				    $("showlgndlabel").val("Legend is off"); 
-				} 
-			    }); 
+			   
 	class RadiusPieChartBuilderPanel extends HTMLElement {
 		constructor() {
 			super();
@@ -82,6 +75,14 @@
 		}
 		
 	}
+	 $("#showlegend").click(function () { 
+				if ($(this).prop("checked")) { 
+				    $("showlgndlabel").val("Legend is On"); 
+				} 
+				else { 
+				    $("showlgndlabel").val("Legend is off"); 
+				} 
+			    }); 
 
 	customElements.define("com-sap-sample-piechart-builder", RadiusPieChartBuilderPanel);
 })();
