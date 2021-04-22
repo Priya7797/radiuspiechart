@@ -41,7 +41,8 @@
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
-			this._shadowRoot.getElementByName("chklegend").addEventListener("click", this._submit.bind(this));
+			this._shadowRoot.getElementById("chkYes").addEventListener("click", this._submit.bind(this));
+			this._shadowRoot.getElementById("chkNo").addEventListener("click", this._submit.bind(this));
 		}
 
 		_submit(e) {
@@ -73,11 +74,11 @@
 			return this._shadowRoot.getElementById("chart_title_fontsize").value;
 		}
 		set legend(newLegend) {
-			this._shadowRoot.getElementByName("chklegend").checked = newLegend;
+			this._shadowRoot.getElementById("chkYes").checked = newLegend;
 		}
 
 		get legend() {
-			return this._shadowRoot.getElementByName("chklegend").checked;
+			return this._shadowRoot.getElementById("chkYes").checked;
 		}
 		
 	}
