@@ -15,7 +15,7 @@
 				<tr>
 					<span>Do you want legend?</span>
 					<label for="chkYes">
-					    <input type="radio" id="chkYes" name="chklegend"/>
+					    <input type="radio" id="chkYes" name="chklegend" checked/>
 					    Yes
 					</label>
 					<label for="chkNo">
@@ -52,7 +52,8 @@
 						properties: {
 							title: this.title,
 							titlefontsize: this.titlefontsize, 
-							legend: this.legend
+							legendYes: this.legendYes,
+							legendNo: this.legendNo
 						}
 					}
 			}));
