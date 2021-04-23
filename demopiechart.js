@@ -1,3 +1,4 @@
+//edited by firefox
 (function()  {
 	let _series1Color;
 	let _chartTitle;
