@@ -8,6 +8,7 @@
 	const amchartsanimatedjs = "https://cdn.amcharts.com/lib/4/themes/animated.js"
 	
 	
+	
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
 <div id="chartTitle" style=""></div><br/>
