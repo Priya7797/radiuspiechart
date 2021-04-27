@@ -198,8 +198,7 @@ else {
 				series.dataFields.category = "country";
 				series.slices.template.cornerRadius = 6;
 				series.colors.step = 3;
-				series.slices.template.propertyFields.fill = am4core.color('#67b7dc');
-				series.slices.template.propertyFields.stroke = am4core.color('#67b7dc');
+				series.colors.list = seriesColors;
 			
 			
 
