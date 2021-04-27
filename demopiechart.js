@@ -198,7 +198,7 @@ else {
 				series.dataFields.category = "country";
 				series.slices.template.cornerRadius = 6;
 				series.colors.step = 3;
-				series.colors.list = ["#67b7dc","#a367dc","#dc6788"];
+				series.colors.list = ["#67b7dc","#a367dc","#dc6788","#000000"];
 			
 			
 
