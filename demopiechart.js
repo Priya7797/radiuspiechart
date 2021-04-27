@@ -174,14 +174,14 @@ else {
 						var newDataObject = {};
 						newDataObject.category_id = dimMemberID;
 						newDataObject.country = dimMemberDesc;
-						newDataObject.measuredescriptions = [];
-						newDataObject.measuredescriptions.push(msrObj.measure_description);
+					/*	newDataObject.measuredescriptions = [];
+						newDataObject.measuredescriptions.push(msrObj.measure_description);*/
 						newDataObject.value = msrObj.formattedValue;
 						newChartData.push(newDataObject);
 					} else {
 						var existingObj = newChartData.find(x => x.category_id === dimMemberID);
-						existingObj.measuredescriptions.push(msrObj.measure_description);
-						var newProp = "value"+existingObj.measuredescriptions.length;
+					/*	existingObj.measuredescriptions.push(msrObj.measure_description);
+						var newProp = "value"+existingObj.measuredescriptions.length;*/
 						existingObj[newProp] = msrObj.formattedValue;
 					}
 					
@@ -190,13 +190,18 @@ else {
 				
 
 }
-
-var series = chart.series.push(new am4charts.PieSeries());
-series.dataFields.value = "value";
-series.dataFields.radiusValue = "value";
-series.dataFields.category = "country";
-series.slices.template.cornerRadius = 6;
-series.colors.step = 3;
+			var seriesColors = this._series1Color.split(";");
+			console.log(seriesColors);
+				var series = chart.series.push(new am4charts.PieSeries());
+				series.dataFields.value = "value";
+				series.dataFields.radiusValue = "value";
+				series.dataFields.category = "country";
+				series.slices.template.cornerRadius = 6;
+				series.colors.step = 3;
+				series.slices.template.propertyFields.fill = am4core.color('#67b7dc');
+				series.slices.template.propertyFields.stroke = am4core.color('#67b7dc');
+			
+			
 
 series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);		
