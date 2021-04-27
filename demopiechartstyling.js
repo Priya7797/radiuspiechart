@@ -7,7 +7,7 @@
 				<table>
 					<tr>
 						<td>Color</td>
-						<td><input id="styling_color" type="text" size="40" maxlength="40"></td>
+						<td><input id="styling_color" type="text" size="80" maxlength="80"></td>
 					</tr>
 				</table>
 				<input type="submit" style="display:none;">
