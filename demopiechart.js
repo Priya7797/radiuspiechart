@@ -192,7 +192,7 @@ else {
 }
 			var seriesColors = this._series1Color.split(";");
 			for (i = 0; i < seriesColors.length; i++) {
-				seriesColors[i] = "am4core.color(" +seriesColors[i] + ")";
+				seriesColors[i] = "am4core.color('" +seriesColors[i] + "')";
 			  }
 			console.log(seriesColors);
 				var series = chart.series.push(new am4charts.PieSeries());
