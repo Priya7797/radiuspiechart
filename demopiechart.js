@@ -217,11 +217,11 @@ if(this._statusCheckBox == true){
 
 if(this._legendValue == true){
 					
-	series.tooltipText = "{value}";
+	series.tooltipText = "Value: [bold]{value}[/]";
 				}
-				else {
-					series.tooltipText = "{valueY}";
-				}
+				// else {
+				// 	series.tooltipText = "{valueY}";
+				// }
 
 chart.legend = new am4charts.Legend();
 //chart.legend.maxHeight = 50;
