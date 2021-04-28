@@ -1,37 +1,48 @@
 {
-	"name": "Radius Pie chart 2",
+	"name": "Radius Pie chart",
 	"description": "The first step in creating a minamilistic KPI tile.  Now with properties",
 	"eula": "",
 	"vendor": "",
 	"license": "",
-	"id": "com.sap.sample.piechar2",
-	"newInstancePrefix": "piechart2",
-	"version": "0.0.1",
+	"id": "com.sap.sample.piechart",
+	"newInstancePrefix": "piechart",
+	"version": "1.0.0",
 	"icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAA3NCSVQICAjb4U/gAAAAb1BMVEX///+ZmZl4dXdBPj9hYGGOjpE6ODo8OjwvLC0lISIpJSaMiooyLzH/cjMxLi9GREb/ZSk2MzV9fX1MSks4NjcrJyn/WR9ycnJRT1AtKiv/TRVdXF1ra2v7VCfJyMk+PD6tra+rqqtUUlU0MTNqaGpjxDg2AAAAAXRSTlMAQObYZgAAAAlwSFlzAAAOxAAADsQBlSsOGwAAAKhJREFUGNM9z9EagiAMBeDpEGkWNAGhqFTq/Z8xwK/+q7PtZgeg6npEMcBPJ0d1Kmg6ZnFGRZcLESnR7tpoouuVSCPPZYHWee+XxTsrvQeYQrwV97tL5uZigMeoqucTUSnWEVBX4fWaW2BYz1W3bXsLDPldcD8MoYZ3glmMjNbGLJk5igDgnLTGHazdAPo1Gdms2bZXhRmbMuNR5rNWJuX075sMYg57jV94IQ2Xqt1atQAAAABJRU5ErkJggg==",
 	"webcomponents": [
         {
 			"kind": "main",
-			"tag": "com-sap-sample-piechart1",
+			"tag": "com-sap-sample-piechart",
             "url": "https://priya7797.github.io/radiuspiechart/demopiechart.js",
             "integrity": "",
             "ignoreIntegrity" : true
         },
 		{
 			"kind": "styling",
-			"tag": "com-bva4kor-sac-radialbarchart-styling",
-			"url": "https://babar-s-v.github.io/sac_wdgets/amCharts/radialbarchart_styling.js",
+			"tag": "com-sap-sample-piechart-styling",
+			"url": "https://priya7797.github.io/radiuspiechart/demopiechartstyling.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		},
 		{
 			"kind": "builder",
-			"tag": "com-bva4kor-sac-radialbarchart-builder",
-			"url": "https://babar-s-v.github.io/sac_wdgets/amCharts/radialbarchart_builder.js",
+			"tag": "com-sap-sample-piechart-builder",
+			"url": "https://priya7797.github.io/radiuspiechart/demupiechartbuilder.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}
     ],
 	"properties": {
+	
+		"statusCheckBox": {
+			"type": "boolean",
+			"description": "DataSource ResultSet String",
+			"default": false
+		},
+		"legendvalue": {
+			"type": "boolean",
+			"description": "DataSource ResultSet String",
+			"default": false
+		},
 	
 		"datasourceString": {
 			"type": "string",
@@ -61,6 +72,7 @@
 			"type": "integer",
 			"default": 400
 		}
+		
 	},
 	"methods": {
 		"setDataSourceString": {
@@ -126,7 +138,44 @@
 			"returnType": "integer",
 			"description": "Returns the font size for the chart title.",
 			"body": "return this.titlefontsize;"
+		},
+		
+		"setstatusCheckBox": {
+			"description": "Set CheckBox status",
+			"parameters": [
+				{
+					"name": "newStatus",
+					"type": "boolean",
+					"description": "Status Change"
+				}
+			],
+			"body": "this.statusCheckBox = newStatus;"
+		},
+		
+		"getstatusCheckBox": {
+			"returnType": "boolean",
+			"description": "Set CheckBox status",
+			"body": "return this.statusCheckBox;"
+		},
+		"setlegendvalue": {
+			"description": "Set legent value",
+			"parameters": [
+				{
+					"name": "newlegendValue",
+					"type": "boolean",
+					"description": "Status Change"
+				}
+			],
+			"body": "this.legendvalue = newlegendValue;"
+		},
+		
+		"getlegendvalue": {
+			"returnType": "boolean",
+			"description": "Set CheckBox status",
+			"body": "return this.legendvalue;"
 		}
+		
+		
 	},
 	"events": {
 	}
