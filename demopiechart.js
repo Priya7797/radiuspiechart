@@ -206,11 +206,11 @@ else {
 				series.slices.template.cornerRadius = 6;
 				// series.colors.step = 3;
 				series.colors.list = seriesColors;
-				if(this._legendValue == true){
-					series.legendSettings.itemValueText = "{value}";
+				if(this._legendValue == false){
+					series.legendSettings.itemValueText = "{valueY}";
 				}
 				else {
-				series.legendSettings.itemValueText = "{valueY}";
+				series.legendSettings.itemValueText = "{value}";
 				}
 				
 			
