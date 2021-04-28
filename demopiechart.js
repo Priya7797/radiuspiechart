@@ -215,10 +215,10 @@ series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);		
 if(this._statusCheckBox == true){
 
-// if(this._legendValue == true){
+if(this._legendValue == true){
 					
-// 					series.legendSettings.itemValueText = "{value}";
-// 				}
+	series.tooltipText = "{value}";
+				}
 // 				else {
 // 					series.legendSettings.itemValueText = "{valueY}";
 // 				}
