@@ -215,11 +215,12 @@ series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);		
 if(this._statusCheckBox == true){
 
-if(this._legendValue == false){
-					series.legendSettings.itemValueText = "{valueY}";
+if(this._legendValue == true){
+					
+					series.legendSettings.itemValueText = "{value}";
 				}
 				else {
-				series.legendSettings.itemValueText = "{value}";
+					series.legendSettings.itemValueText = "{valueY}";
 				}
 
 chart.legend = new am4charts.Legend();
