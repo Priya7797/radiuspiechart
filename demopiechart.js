@@ -216,7 +216,7 @@ console.log(_statusCheckBox);
 if(this._statusCheckBox == true){
 
 	if(this._legendValue == false){
-		series.legendSettings.itemValueText = "{valueY}";
+		series.legendSettings.itemValueText = value;
 	}
 	else {
 	series.legendSettings.itemValueText = "{value}";
