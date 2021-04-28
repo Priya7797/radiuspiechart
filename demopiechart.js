@@ -202,6 +202,7 @@ else {
 				series.slices.template.cornerRadius = 6;
 				// series.colors.step = 3;
 				series.colors.list = seriesColors;
+				series.legendSettings.itemValueText = "{value}";
 			
 			
 
