@@ -4,6 +4,7 @@
 	let _chartTitle;
 	let _chartTitleFontSize;
 	let _statusCheckBox;
+	let _legendValue;
 	const amchartscorejs = "https://cdn.amcharts.com/lib/4/core.js";
 	const amchartschartsjs = "https://cdn.amcharts.com/lib/4/charts.js";
 	const amchartsanimatedjs = "https://cdn.amcharts.com/lib/4/themes/animated.js"
@@ -82,6 +83,9 @@ function loadScript(src) {
 				}
 				if ("statusCheckBox" in changedProperties) {
 					this._statusCheckBox = changedProperties["statusCheckBox"];
+				}
+				if ("legendvalue" in changedProperties) {
+					this._legendValue = changedProperties["legendvalue"];
 				}
 				if (this._firstConnection === 1) {
 					this.loadthis();
@@ -202,7 +206,10 @@ else {
 				series.slices.template.cornerRadius = 6;
 				// series.colors.step = 3;
 				series.colors.list = seriesColors;
-				series.legendSettings.itemValueText = "{value}";
+				if(this._legendValue == true){
+					series.legendSettings.itemValueText = "{value}";
+				}
+				
 			
 			
 
