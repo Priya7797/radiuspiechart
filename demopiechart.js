@@ -217,7 +217,7 @@ if(this._statusCheckBox == true){
 
 if(this._legendValue == true){
 					
-	series.columns.template.tooltipText = "{categoryX}: {value}";
+	series.slices.template.tooltipText = "{category}: {value}";
 				}
 				// else {
 				// 	series.tooltipText = "{valueY}";
