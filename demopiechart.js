@@ -217,11 +217,11 @@ if(this._statusCheckBox == true){
 
 if(this._legendValue == true){
 					
-		pieSeries.ticks.template.disabled = true;
-		pieSeries.alignLabels = false;
-		pieSeries.labels.template.text = "{value.percent.formatNumber('#.0')}%";
-		pieSeries.labels.template.radius = am4core.percent(-40);
-		pieSeries.labels.template.fill = am4core.color("white");
+		series.ticks.template.disabled = true;
+		series.alignLabels = false;
+		series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+		series.labels.template.radius = am4core.percent(-40);
+		series.labels.template.fill = am4core.color("white");
 				}
 				// else {
 				// 	series.tooltipText = "{valueY}";
