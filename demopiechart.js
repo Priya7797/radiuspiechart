@@ -206,7 +206,7 @@ else {
 				series.slices.template.cornerRadius = 6;
 				// series.colors.step = 3;
 				series.colors.list = seriesColors;
-				
+				series.legendSettings.itemValueText = "{valueY}";
 				
 			
 			
@@ -215,13 +215,13 @@ series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);		
 if(this._statusCheckBox == true){
 
-if(this._legendValue == true){
+// if(this._legendValue == true){
 					
-					series.legendSettings.itemValueText = "{value}";
-				}
-				else {
-					series.legendSettings.itemValueText = "{valueY}";
-				}
+// 					series.legendSettings.itemValueText = "{value}";
+// 				}
+// 				else {
+// 					series.legendSettings.itemValueText = "{valueY}";
+// 				}
 
 chart.legend = new am4charts.Legend();
 //chart.legend.maxHeight = 50;
