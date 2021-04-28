@@ -207,7 +207,7 @@ else {
 				// series.colors.step = 3;
 				series.colors.list = seriesColors;
 				series.legendSettings.itemValueText = "{valueY}";
-				series.labels.template.text = "{category}: {valueY}";
+				series.labels.template.text = "{category}: {value}";
 				
 			
 			
