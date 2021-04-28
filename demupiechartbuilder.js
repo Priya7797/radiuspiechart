@@ -15,7 +15,7 @@
 				<tr>
 					<td><label for="showlegend" id="showlgndlabel"> Show Legend</label>
 					 <input type="checkbox" id="showlegend" name="showlgnd" checked><br> </td>
-					 <td><label for="showlegendvalue" id="showlgndlabel"> Show Legend</label>
+					 <td><label for="showlegendvalue" id="showlgndlabel"> Show Legend Value</label>
 					 <input type="checkbox" id="showlegendvalue" name="showlgndval" checked><br> </td>
 					     
 				</tr>
