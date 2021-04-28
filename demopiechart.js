@@ -219,9 +219,9 @@ if(this._legendValue == true){
 					
 					series.legendSettings.itemValueText = "{value}";
 				}
-				// else {
-				// 	series.legendSettings.itemValueText = "{valueY}";
-				// }
+				else {
+					series.legendSettings.itemValueText = "{valueY}";
+				}
 
 chart.legend = new am4charts.Legend();
 //chart.legend.maxHeight = 50;
