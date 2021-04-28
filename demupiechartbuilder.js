@@ -13,8 +13,11 @@
 				</tr
 				<br/>
 				<tr>
-					<td> <input type="checkbox" id="showlegend" name="showlgnd" checked>
-					     <label for="showlegend" id="showlgndlabel"> Show Legend</label><br> </td>
+					<td><label for="showlegend" id="showlgndlabel"> Show Legend</label>
+					 <input type="checkbox" id="showlegend" name="showlgnd" checked><br> </td>
+					 <td><label for="showlegendvalue" id="showlgndlabel"> Show Legend</label>
+					 <input type="checkbox" id="showlegendvalue" name="showlgndval" checked><br> </td>
+					     
 				</tr>
 				<br/>
 				
@@ -47,8 +50,8 @@
 						properties: {
 							title: this.title,
 							titlefontsize: this.titlefontsize,
-							statusCheckBox: this.statusCheckBox
-							
+							statusCheckBox: this.statusCheckBox,
+							legendvalue: this.legendvalue
 						}
 					}
 			}));
@@ -61,8 +64,8 @@
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
-							statusCheckBox: this.statusCheckBox
-							
+							statusCheckBox: this.statusCheckBox,
+							legendvalue: this.legendvalue
 						}
 					}
 			}));
@@ -78,6 +81,16 @@
 		get statusCheckBox() {
 			console.log("Inside the set statusCheckBox");
 			return this._shadowRoot.getElementById("showlegend").checked;
+		}
+
+		set legendvalue(legendval) {
+			console.log("Inside the set legend value");
+			this._shadowRoot.getElementById("showlegendvalue").checked = legendval;
+		}
+
+		get legendvalue() {
+			console.log("Inside the get legend value");
+			return this._shadowRoot.getElementById("showlegendvalue").checked;
 		}
 		
 
