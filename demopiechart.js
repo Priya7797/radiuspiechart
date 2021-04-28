@@ -219,9 +219,9 @@ if(this._legendValue == true){
 					
 	series.tooltipText = "{value}";
 				}
-// 				else {
-// 					series.legendSettings.itemValueText = "{valueY}";
-// 				}
+				else {
+					series.tooltipText = "{valueY}";
+				}
 
 chart.legend = new am4charts.Legend();
 //chart.legend.maxHeight = 50;
