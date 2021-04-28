@@ -41,6 +41,7 @@
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
 			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
 			this._shadowRoot.getElementById("showlegend").addEventListener("change", this._click.bind(this));
+			this._shadowRoot.getElementById("showlegendvalue").addEventListener("change", this._click.bind(this));
 		}
 
 		_submit(e) {
