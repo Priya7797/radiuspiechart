@@ -209,6 +209,9 @@ else {
 				if(this._legendValue == true){
 					series.legendSettings.itemValueText = "{value}";
 				}
+				else {
+				series.legendSettings.itemValueText = "{valueY}";
+				}
 				
 			
 			
