@@ -217,7 +217,11 @@ if(this._statusCheckBox == true){
 
 if(this._legendValue == true){
 					
-	Series.labels.template.text = "{value}";
+		pieSeries.ticks.template.disabled = true;
+		pieSeries.alignLabels = false;
+		pieSeries.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+		pieSeries.labels.template.radius = am4core.percent(-40);
+		pieSeries.labels.template.fill = am4core.color("white");
 				}
 				// else {
 				// 	series.tooltipText = "{valueY}";
