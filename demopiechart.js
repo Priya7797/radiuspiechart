@@ -215,12 +215,12 @@ series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);		
 if(this._statusCheckBox == true){
 
-	if(this._legendValue == false){
-		series.legendSettings.itemValueText = value;
-	}
-	else {
-	series.legendSettings.itemValueText = "{value}";
-	}
+if(this._legendValue == false){
+					series.legendSettings.itemValueText = "{valueY}";
+				}
+				// else {
+				// series.legendSettings.itemValueText = "{value}";
+				// }
 
 chart.legend = new am4charts.Legend();
 //chart.legend.maxHeight = 50;
