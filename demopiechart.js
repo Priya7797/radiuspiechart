@@ -207,7 +207,7 @@ else {
 				// series.colors.step = 3;
 				series.colors.list = seriesColors;
 				series.legendSettings.itemValueText = "{valueY}";
-				series.labels.template.text = "{category}: {value}";
+				//series.labels.template.text = "{category}: {value}";
 				
 			
 			
@@ -216,9 +216,9 @@ series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);		
 if(this._statusCheckBox == true){
 
-// if(this._legendValue == true){
-// 	series.labels.template.text = "{category}: {value}";
-// 				}
+if(this._legendValue == true){
+	series.labels.template.text = "{category}: {value}";
+				}
 				// else {
 				// 	series.tooltipText = "{valueY}";
 				// }
