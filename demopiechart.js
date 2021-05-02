@@ -220,7 +220,7 @@ else {
 				series.colors.list = seriesColors;
 				series.legendSettings.itemValueText = "{valueY}";
 				//series.labels.template.text = "{category}: {value}";
-				series.labels.template.maxWidth = 130;
+				series.labels.template.maxWidth = 50;
 				series.labels.template.wrap = true;
 			
 			
