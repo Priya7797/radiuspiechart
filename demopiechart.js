@@ -220,7 +220,7 @@ else {
 				series.colors.list = seriesColors;
 				series.legendSettings.itemValueText = "{valueY}";
 				//series.labels.template.text = "{category}: {value}";
-				
+				series.labels.template.wrap = true;
 			
 			
 
@@ -230,8 +230,10 @@ console.log(_statusCheckBox);
 if(this._legendValue == false){
 	series.ticks.template.disabled = true;
 	series.alignLabels = false;
+	pieSeries.labels.template.relativeRotation = 90;
 	series.labels.template.radius = am4core.percent(-40);
 	series.labels.template.fill = am4core.color("white");
+	Series.labels.template.fontSize = 8;
 	if(this._radioValue == true)
 	series.labels.template.text = "{value}";
 
