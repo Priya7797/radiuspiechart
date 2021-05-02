@@ -5,6 +5,9 @@
 	let _chartTitleFontSize;
 	let _statusCheckBox;
 	let _legendValue;
+	let _radioValue;
+	let _radioPercent;
+	let _radioCombination;
 	const amchartscorejs = "https://cdn.amcharts.com/lib/4/core.js";
 	const amchartschartsjs = "https://cdn.amcharts.com/lib/4/charts.js";
 	const amchartsanimatedjs = "https://cdn.amcharts.com/lib/4/themes/animated.js"
@@ -86,6 +89,15 @@ function loadScript(src) {
 				}
 				if ("legendvalue" in changedProperties) {
 					this._legendValue = changedProperties["legendvalue"];
+				}
+				if ("radiovalue" in changedProperties) {
+					this._radioValue = changedProperties["radiovalue"];
+				}
+				if ("radiopercent" in changedProperties) {
+					this._radioPercent = changedProperties["radiopercent"];
+				}
+				if ("radiocombination" in changedProperties) {
+					this._radioCombination = changedProperties["radiocombination"];
 				}
 				if (this._firstConnection === 1) {
 					this.loadthis();
@@ -213,17 +225,42 @@ else {
 			
 
 series.hiddenState.properties.endAngle = -90;
-console.log(_statusCheckBox);		
-if(this._statusCheckBox == true){
+console.log(_statusCheckBox);	
 
 if(this._legendValue == false){
-		series.ticks.template.disabled = true;
-		series.alignLabels = false;
-		series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
-		series.labels.template.radius = am4core.percent(-40);
-		series.labels.template.fill = am4core.color("white");
+	series.ticks.template.disabled = true;
+	series.alignLabels = false;
+	series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+	series.labels.template.radius = am4core.percent(-40);
+	series.labels.template.fill = am4core.color("white");
+}
+else if(this._radioValue == true){
+	series.ticks.template.disabled = true;
+	series.alignLabels = false;
+	series.labels.template.text = "{value}";
+	series.labels.template.radius = am4core.percent(-40);
+	series.labels.template.fill = am4core.color("white");
+
+}
+else if(this._radioPercent == true)
+{
+	series.ticks.template.disabled = true;
+	series.alignLabels = false;
+	series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+	series.labels.template.radius = am4core.percent(-40);
+	series.labels.template.fill = am4core.color("white");
+}
+else if(this._radioCombination == true){
+	series.ticks.template.disabled = true;
+	series.alignLabels = false;
+	series.labels.template.text = "{value.percent.formatNumber('#.0')}% ({value})";
+	series.labels.template.radius = am4core.percent(-40);
+	series.labels.template.fill = am4core.color("white");
+}
+
+if(this._statusCheckBox == true){
 		//series.labels.template.text = "{category}: {value}";
-				}
+				
 				// else {
 				// 	series.tooltipText = "{valueY}";
 				// }
@@ -236,6 +273,7 @@ var markerTemplate = chart.legend.markers.template;
 markerTemplate.width = 10;
 markerTemplate.height = 10;
 }
+
 
 // end am4core.ready()
         }
