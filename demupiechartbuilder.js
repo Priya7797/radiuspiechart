@@ -20,8 +20,8 @@
 					     
 				</tr>
 				<tr><td>
-				</br><U><I>
-				Selct below option to display value inside slices
+				</br><U>
+				Selct below options
 				</U></td></tr>
 				<tr><td>
 				</br>
