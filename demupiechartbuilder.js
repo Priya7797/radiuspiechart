@@ -15,9 +15,17 @@
 				<tr>
 					<td><label for="showlegend" id="showlgndlabel"> Show Legend</label>
 					 <input type="checkbox" id="showlegend" name="showlgnd" checked><br> </td>
-					 <td><label for="showlegendvalue" id="showlgndlabel"> Show Actual Value in Slice label</label>
+					 <td><label for="showlegendvalue" id="showlgndlabel"> Display label and value outside</label>
 					 <input type="checkbox" id="showlegendvalue" name="showlgndval" checked><br> </td>
 					     
+				</tr>
+				<tr><U><I>
+				Selct below option to display value inside slices
+				</I></U></tr>
+				<tr>
+				<td><input type="radio" name="choice" value="labelvalue id="radiovalue""> Display Actual Value</td>
+   				<td><input type="radio" name="choice" value="labelpercent" id="radiopercent"> Display Percentage</td>
+				<td><input type="radio" name="choice" value="labelcombination" id="radiocombination"> Display Combination</td>
 				</tr>
 				<br/>
 				
@@ -42,6 +50,11 @@
 			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
 			this._shadowRoot.getElementById("showlegend").addEventListener("change", this._click.bind(this));
 			this._shadowRoot.getElementById("showlegendvalue").addEventListener("change", this._click.bind(this));
+			this._shadowRoot.getElementById("radiovalue").addEventListener("change", this._click.bind(this));
+			this._shadowRoot.getElementById("radiopercent").addEventListener("change", this._click.bind(this));
+			this._shadowRoot.getElementById("radiocombination").addEventListener("change", this._click.bind(this));
+			
+
 		}
 
 		_submit(e) {
@@ -52,7 +65,10 @@
 							title: this.title,
 							titlefontsize: this.titlefontsize,
 							statusCheckBox: this.statusCheckBox,
-							legendvalue: this.legendvalue
+							legendvalue: this.legendvalue,
+							radiovalue: this.radiovalue,
+							radiopercent: this.radiopercent,
+							radiocombination: this.radiocombination
 						}
 					}
 			}));
@@ -66,7 +82,10 @@
 					detail: {
 						properties: {
 							statusCheckBox: this.statusCheckBox,
-							legendvalue: this.legendvalue
+							legendvalue: this.legendvalue,
+							radiovalue: this.radiovalue,
+							radiopercent: this.radiopercent,
+							radiocombination: this.radiocombination
 						}
 					}
 			}));
@@ -93,6 +112,40 @@
 			console.log("Inside the get legend value");
 			return this._shadowRoot.getElementById("showlegendvalue").checked;
 		}
+
+
+
+
+		set radiovalue(newRadioValue) {
+			console.log("Inside the set legend value");
+			this._shadowRoot.getElementById("radiovalue").checked = newRadioValue;
+		}
+
+		get radiovalue() {
+			console.log("Inside the get legend value");
+			return this._shadowRoot.getElementById("radiovalue").checked;
+		}
+		set radiopercent(newRadioPercentage) {
+			console.log("Inside the set legend value");
+			this._shadowRoot.getElementById("radiopercent").checked = newRadioPercentage;
+		}
+
+		get radiopercent() {
+			console.log("Inside the get legend value");
+			return this._shadowRoot.getElementById("radiopercent").checked;
+		}
+		set radiocombination(newRadioCombinatiom) {
+			console.log("Inside the set legend value");
+			this._shadowRoot.getElementById("radiocombination").checked = newRadioCombinatiom;
+		}
+
+		get radiocombination() {
+			console.log("Inside the get legend value");
+			return this._shadowRoot.getElementById("radiocombination").checked;
+		}
+
+
+
 		
 
 		set title(newTitle) {
