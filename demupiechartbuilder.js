@@ -23,9 +23,13 @@
 				Selct below option to display value inside slices
 				</I></U></tr>
 				<tr>
-				<td><input type="radio" name="choice" value="labelvalue" id="radiovalue"> Display Actual Value</td>
-   				<br><td><input type="radio" name="choice" value="labelpercent" id="radiopercent"> Display Percentage</td>
-				<br><td><input type="radio" name="choice" value="labelcombination" id="radiocombination"> Display Combination</td>
+				<input type="radio" name="choice" value="labelvalue" id="radiovalue"> Display Actual Value
+				</tr>
+				<tr>
+   				<input type="radio" name="choice" value="labelpercent" id="radiopercent"> Display Percentage
+				</tr>
+				<tr>
+				<input type="radio" name="choice" value="labelcombination" id="radiocombination"> Display Combination
 				</tr>
 				<br/>
 				
