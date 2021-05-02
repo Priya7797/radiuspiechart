@@ -216,8 +216,13 @@ series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);		
 if(this._statusCheckBox == true){
 
-if(this._legendValue == true){
-	series.labels.template.text = "{category}: {value}";
+if(this._legendValue == false){
+		series.ticks.template.disabled = true;
+		series.alignLabels = false;
+		series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+		series.labels.template.radius = am4core.percent(-40);
+		series.labels.template.fill = am4core.color("white");
+		//series.labels.template.text = "{category}: {value}";
 				}
 				// else {
 				// 	series.tooltipText = "{valueY}";

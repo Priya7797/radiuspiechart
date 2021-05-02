@@ -43,7 +43,6 @@
 			"description": "DataSource ResultSet String",
 			"default": false
 		},
-	
 		"datasourceString": {
 			"type": "string",
 			"description": "DataSource ResultSet String",
