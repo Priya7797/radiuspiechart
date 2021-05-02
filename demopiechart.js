@@ -230,33 +230,28 @@ console.log(_statusCheckBox);
 if(this._legendValue == false){
 	series.ticks.template.disabled = true;
 	series.alignLabels = false;
-	series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
 	series.labels.template.radius = am4core.percent(-40);
 	series.labels.template.fill = am4core.color("white");
-}
-if(this._radioValue == true){
-	series.ticks.template.disabled = true;
-	series.alignLabels = false;
-	series.labels.template.text = "{value}";
-	series.labels.template.radius = am4core.percent(-40);
-	series.labels.template.fill = am4core.color("white");
+	if(this._radioValue == true){
+	
+		series.labels.template.text = "{value}";
+	
+	}
+	else if(this._radioPercent == true)
+	{
+	
+		series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+	}
+	else if(this._radioCombination == true){
+		series.labels.template.text = "{value.percent.formatNumber('#.0')}% ({value})";
+		
+	}
+	else{
+		series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
 
+	}
 }
-else if(this._radioPercent == true)
-{
-	series.ticks.template.disabled = true;
-	series.alignLabels = false;
-	series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
-	series.labels.template.radius = am4core.percent(-40);
-	series.labels.template.fill = am4core.color("white");
-}
-else if(this._radioCombination == true){
-	series.ticks.template.disabled = true;
-	series.alignLabels = false;
-	series.labels.template.text = "{value.percent.formatNumber('#.0')}% ({value})";
-	series.labels.template.radius = am4core.percent(-40);
-	series.labels.template.fill = am4core.color("white");
-}
+
 
 if(this._statusCheckBox == true){
 		//series.labels.template.text = "{category}: {value}";
