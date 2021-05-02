@@ -19,10 +19,13 @@
 					 <input type="checkbox" id="showlegendvalue" name="showlgndval" checked><br> </td>
 					     
 				</tr>
+				</br>
+				</br>
 				<tr><td><U><I>
 				Selct below option to display value inside slices
 				</I></U></td></tr>
 				<tr><td>
+				</br>
 				<input type="radio" name="choice" value="labelvalue" id="radiovalue"> Display Actual Value
 				</td></tr>
 				<tr>
