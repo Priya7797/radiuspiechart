@@ -15,15 +15,14 @@
 				<tr>
 					<td><label for="showlegend" id="showlgndlabel"> Show Legend</label>
 					 <input type="checkbox" id="showlegend" name="showlgnd" checked><br> </td>
-					 <td><label for="showlegendvalue" id="showlgndlabel"> Display label and value outside</label>
+					 <td><label for="showlegendvalue" id="showlgndlabel"> Display label outside</label>
 					 <input type="checkbox" id="showlegendvalue" name="showlgndval" checked><br> </td>
 					     
 				</tr>
 				<tr><td>
-				</br>
 				</br><U><I>
 				Selct below option to display value inside slices
-				</I></U></td></tr>
+				</U></td></tr>
 				<tr><td>
 				</br>
 				<input type="radio" name="choice" value="labelvalue" id="radiovalue"> Display Actual Value
