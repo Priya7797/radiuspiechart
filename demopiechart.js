@@ -226,35 +226,27 @@ else {
 
 series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);	
-
+let inculde_category=""
 if(this._legendValue == false){
 	series.ticks.template.disabled = true;
 	series.alignLabels = false;
-	pieSeries.labels.template.relativeRotation = 90;
+	series.labels.template.relativeRotation = 90;
 	series.labels.template.radius = am4core.percent(-40);
 	series.labels.template.fill = am4core.color("white");
-	Series.labels.template.fontSize = 8;
-	if(this._radioValue == true)
-	series.labels.template.text = "{value}";
+	series.labels.template.fontSize = 8;
+	inculde_category="{category} : "
+	
+}
+
+if(this._radioValue == true)
+	series.labels.template.text = inculde_category+ "{value}";
 
 	else if(this._radioPercent == true)
-		series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
+		series.labels.template.text = inculde_category+"{value.percent.formatNumber('#.0')}%";
 	else if(this._radioCombination == true)
-		series.labels.template.text = "{value.percent.formatNumber('#.0')}% ({value})";
+		series.labels.template.text = inculde_category+"{value.percent.formatNumber('#.0')}% ({value})";
 	else
-		series.labels.template.text = "{value.percent.formatNumber('#.0')}%";
-}
-else{
-	if(this._radioValue == true)
-	series.labels.template.text = "{category}:{value}";
-
-	else if(this._radioPercent == true)
-		series.labels.template.text = "{category}:{value.percent.formatNumber('#.0')}%";
-	else if(this._radioCombination == true)
-		series.labels.template.text = "{category}:{value.percent.formatNumber('#.0')}% ({value})";
-	else
-		series.labels.template.text = "{category}:{value.percent.formatNumber('#.0')}%";
-}
+		series.labels.template.text = inculde_category+ "{value.percent.formatNumber('#.0')}%";
 
 
 
