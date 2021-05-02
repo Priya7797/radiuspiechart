@@ -21,7 +21,7 @@
 				</tr>
 				<tr><td>
 				</br><U>
-				Selct below options
+				Select below options
 				</U></td></tr>
 				<tr><td>
 				</br>
