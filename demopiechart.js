@@ -226,7 +226,7 @@ else {
 
 series.hiddenState.properties.endAngle = -90;
 console.log(_statusCheckBox);	
-let inculde_category=""
+let inculde_category="{category} : "
 if(this._legendValue == false){
 	series.ticks.template.disabled = true;
 	series.alignLabels = false;
@@ -234,7 +234,7 @@ if(this._legendValue == false){
 	series.labels.template.radius = am4core.percent(-40);
 	series.labels.template.fill = am4core.color("white");
 	series.labels.template.fontSize = 8;
-	inculde_category="{category} : "
+	inculde_category=""
 	
 }
 
