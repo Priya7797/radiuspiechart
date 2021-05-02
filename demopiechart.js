@@ -231,10 +231,10 @@ if(this._legendValue == false){
 	series.ticks.template.disabled = true;
 	series.alignLabels = false;
 	series.labels.template.relativeRotation = 90;
-	series.labels.template.radius = am4core.percent(-40);
+	series.labels.template.radius = am4core.percent(-50);
 	series.labels.template.fill = am4core.color("white");
-	series.labels.template.fontSize = 8;
-	inculde_category=""
+	series.labels.template.fontSize = 11;
+	inculde_category="";
 	
 }
 
