@@ -234,7 +234,7 @@ if(this._legendValue == false){
 	series.labels.template.radius = am4core.percent(-40);
 	series.labels.template.fill = am4core.color("white");
 }
-else if(this._radioValue == true){
+if(this._radioValue == true){
 	series.ticks.template.disabled = true;
 	series.alignLabels = false;
 	series.labels.template.text = "{value}";
