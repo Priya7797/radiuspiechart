@@ -19,9 +19,9 @@
 					 <input type="checkbox" id="showlegendvalue" name="showlgndval" checked><br> </td>
 					     
 				</tr>
+				<tr><td>
 				</br>
-				</br>
-				<tr><td><U><I>
+				</br><U><I>
 				Selct below option to display value inside slices
 				</I></U></td></tr>
 				<tr><td>
