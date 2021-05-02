@@ -24,8 +24,8 @@
 				</I></U></tr>
 				<tr>
 				<td><input type="radio" name="choice" value="labelvalue" id="radiovalue"> Display Actual Value</td>
-   				<td><input type="radio" name="choice" value="labelpercent" id="radiopercent"> Display Percentage</td>
-				<td><input type="radio" name="choice" value="labelcombination" id="radiocombination"> Display Combination</td>
+   				<br><td><input type="radio" name="choice" value="labelpercent" id="radiopercent"> Display Percentage</td>
+				<br><td><input type="radio" name="choice" value="labelcombination" id="radiocombination"> Display Combination</td>
 				</tr>
 				<br/>
 				
