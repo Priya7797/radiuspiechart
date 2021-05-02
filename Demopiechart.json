@@ -204,7 +204,7 @@
 					"description": "Status Change"
 				}
 			],
-			"body": "this.radiovalue = newradioValue;"
+			"body": "this.radiovalue = newradiovalue;"
 		},
 		
 		"getradiovalue": {
