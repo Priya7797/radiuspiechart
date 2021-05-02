@@ -19,18 +19,19 @@
 					 <input type="checkbox" id="showlegendvalue" name="showlgndval" checked><br> </td>
 					     
 				</tr>
-				<tr><U><I>
+				<tr><td><U><I>
 				Selct below option to display value inside slices
-				</I></U></tr>
-				<tr>
+				</I></U></td></tr>
+				<tr><td>
 				<input type="radio" name="choice" value="labelvalue" id="radiovalue"> Display Actual Value
-				</tr>
+				</td></tr>
 				<tr>
+				<td>
    				<input type="radio" name="choice" value="labelpercent" id="radiopercent"> Display Percentage
-				</tr>
-				<tr>
+				</td></tr>
+				<tr><td>
 				<input type="radio" name="choice" value="labelcombination" id="radiocombination"> Display Combination
-				</tr>
+				</td></tr>
 				<br/>
 				
 
